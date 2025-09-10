@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: yellow;
+      background: #111;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+      overflow-y: scroll;
+    }
+
+    section {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero {
+      background-image: url("intro.jpg");
+    }
+
+    .about {
+      background-image: url("intro.jpg");
+    }
+    .skills{
+        background-image:url("intro.jpg");
+    }
+
+    .projects {
+      background-image: url("intro.jpg");
+    }
+
+    .contact {
+      background-image: url("intro.jpg");
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .content.show {
+      opacity: 1;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #ff6ec7, #7367f0, #32e0c4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff6ec7, 0 0 20px #7367f0;
+      }
+      to {
+        text-shadow: 0 0 20px #32e0c4, 0 0 30px #ff6ec7;
+      }
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 110, 199, 0.7);
+    }
+    .video-container {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="content">
+      <h1>Hi, I’m Sam Joyson </h1>
+      <p>I am a Software,Web developer and designer</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="content">
+      <img src="myphoto.jpg" alt="My Photo" class="profile-pic">
+      <h1>About Me</h1>
+      <p>Hi, I’m Sam Joyson S, a Computer Science and Engineering student at KCG College of Technology. I’m passionate about software development, problem-solving, and building impactful projects while constantly learning and growing.</p>
+    </div>
+  </section>
+  <section class="skills">
+      <div class="content">
+          <h1> Skills </h1>
+          <p>Programmer: c,c++,java.<br><br>Web Development:<br> Html,css,javascript.<br><br>Video Editor </p>
+      </div>
+  </section>
+
+  <section class="projects">
+  <div class="content">
+    <h1>Projects </h1>
+    <p>Take a look at one of my most exciting and creative work below.</p>
+
+    <div class="video-container">
+      <video src="project.mp4" controls></video>
+    </div>
+    <h2 style="color:red;">Human Following Robot – A Science Fest Project:</h2>
+    <br>
+<p>While studying in 12th grade, I participated in the Science Fest at St. Joseph College of Engineering, where I presented my project – a Human Following Robot.
+
+The robot was designed to detect and follow a person’s movement automatically using sensors, enabling it to track and move along with the user. This concept can be applied in assisting elderly people, carrying luggage, or even in smart robotics for industries.
+
+My project stood out among several innovative ideas, and I was awarded the 2nd Prize for creativity, functionality, and presentation.</p>
+  </div>
+</section>
+  <section class="contact">
+    <div class="content">
+      <h1>Let’s Connect 🤝</h1>
+      <p>Email: samjoyson06@gmail.com<br><br> Contact Number: +91 7338884607<br><br><a href="https://www.linkedin.com/in/sam-joyson-919a88327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"style="color:green"<br>LinkedIn <br><br><a href="https://github.com/SamJoyson"target="_blank"style="color:red;"<br> Github</p>
+      
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll("section").forEach(section => {
+      const content = section.querySelector(".content");
+      setTimeout(() => {
+        content.classList.add("show");
+      }, 800);
+    });
+  </script>
+
+</body>
+</html>
